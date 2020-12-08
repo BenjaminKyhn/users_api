@@ -16,7 +16,7 @@
         <th scope="col">Favourite Colour</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="leTable">
     <tr>
         <th scope="row">1</th>
         <td id="name0">Mark</td>
@@ -24,7 +24,7 @@
         <td id="favCol0">@mdo</td>
     </tr>
     <tr>
-        <th scope="row">1</th>
+        <th scope="row">2</th>
         <td id="name1">Mark</td>
         <td id="age1">Otto</td>
         <td id="favCol1">@mdo</td>
@@ -40,6 +40,18 @@
                 let usersArray = JSON.parse(this.responseText);
                 for (let i = 0; i < usersArray.length; i++) {
                     let user = usersArray[i];
+
+                    // This creates table rows dynamically, but css is missing
+                    // let tableRow = document.createElement("tr");
+                    // let tdName = document.createTextNode(`${user.name}`);
+                    // let tdAge = document.createTextNode(`${user.age}`);
+                    // let tdColour = document.createTextNode(`${user.favouritecolour}`);
+                    // tableRow.appendChild(tdName);
+                    // tableRow.appendChild(tdAge);
+                    // tableRow.appendChild(tdColour);
+                    // let element = document.getElementById("leTable");
+                    // element.append(tableRow);
+
                     document.getElementById("name" + user.id).innerHTML = user.name;
                     document.getElementById("age" + user.id).innerHTML = user.age;
                     document.getElementById("favCol" + user.id).innerHTML = user.favouritecolour;
